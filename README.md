@@ -20,5 +20,5 @@ Zeigt den gesamten Zug mit allen Waggons an.
 Ermöglicht das Hinzufügen eines neuen Waggons an einer bestimmten Position im Zug.
 ## Statistik anzeigen: 
 Zeigt eine Statistik über den Zug und die Kapazitäten der verschiedenen Waggontypen an.
-## Programm beenden: 
+## Exit: 
 Beendet das Programm.
