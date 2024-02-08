@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Zwischentest1_Notenrechner
+# Project: Zwischtentest2_Train
 # Configurations: Debug
 # =============================================================================
 
@@ -39,47 +39,47 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/user/Nextcloud/1.$ Semester/Prozedurale$ Sprachen$ Labor/Zwischentests/Zwischentest1_Notenrechner/cmake-build-debug/
+cmake_ninja_workdir = /home/user/Nextcloud/1.$ Semester/Prozedurale$ Sprachen$ Labor/Zwischentests/Zwischtentest2_Train/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Zwischentest1_Notenrechner
+# Object build statements for EXECUTABLE target Zwischtentest2_Train
 
 
 #############################################
-# Order-only phony target for Zwischentest1_Notenrechner
+# Order-only phony target for Zwischtentest2_Train
 
-build cmake_object_order_depends_target_Zwischentest1_Notenrechner: phony || CMakeFiles/Zwischentest1_Notenrechner.dir
+build cmake_object_order_depends_target_Zwischtentest2_Train: phony || CMakeFiles/Zwischtentest2_Train.dir
 
-build CMakeFiles/Zwischentest1_Notenrechner.dir/main.c.o: C_COMPILER__Zwischentest1_Notenrechner_Debug /home/user/Nextcloud/1.$ Semester/Prozedurale$ Sprachen$ Labor/Zwischentests/Zwischentest1_Notenrechner/main.c || cmake_object_order_depends_target_Zwischentest1_Notenrechner
-  DEP_FILE = CMakeFiles/Zwischentest1_Notenrechner.dir/main.c.o.d
+build CMakeFiles/Zwischtentest2_Train.dir/main.c.o: C_COMPILER__Zwischtentest2_Train_Debug /home/user/Nextcloud/1.$ Semester/Prozedurale$ Sprachen$ Labor/Zwischentests/Zwischtentest2_Train/main.c || cmake_object_order_depends_target_Zwischtentest2_Train
+  DEP_FILE = CMakeFiles/Zwischtentest2_Train.dir/main.c.o.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles/Zwischentest1_Notenrechner.dir
-  OBJECT_FILE_DIR = CMakeFiles/Zwischentest1_Notenrechner.dir
-  TARGET_COMPILE_PDB = CMakeFiles/Zwischentest1_Notenrechner.dir/
-  TARGET_PDB = Zwischentest1_Notenrechner.pdb
+  OBJECT_DIR = CMakeFiles/Zwischtentest2_Train.dir
+  OBJECT_FILE_DIR = CMakeFiles/Zwischtentest2_Train.dir
+  TARGET_COMPILE_PDB = CMakeFiles/Zwischtentest2_Train.dir/
+  TARGET_PDB = Zwischtentest2_Train.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Zwischentest1_Notenrechner
+# Link build statements for EXECUTABLE target Zwischtentest2_Train
 
 
 #############################################
-# Link the executable Zwischentest1_Notenrechner
+# Link the executable Zwischtentest2_Train
 
-build Zwischentest1_Notenrechner: C_EXECUTABLE_LINKER__Zwischentest1_Notenrechner_Debug CMakeFiles/Zwischentest1_Notenrechner.dir/main.c.o
+build Zwischtentest2_Train: C_EXECUTABLE_LINKER__Zwischtentest2_Train_Debug CMakeFiles/Zwischtentest2_Train.dir/main.c.o
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Zwischentest1_Notenrechner.dir
+  OBJECT_DIR = CMakeFiles/Zwischtentest2_Train.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/Zwischentest1_Notenrechner.dir/
-  TARGET_FILE = Zwischentest1_Notenrechner
-  TARGET_PDB = Zwischentest1_Notenrechner.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/Zwischtentest2_Train.dir/
+  TARGET_FILE = Zwischtentest2_Train
+  TARGET_PDB = Zwischtentest2_Train.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner/cmake-build-debug" && /app/extra/clion/bin/cmake/linux/bin/ccmake -S"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner" -B"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner/cmake-build-debug"
+  COMMAND = cd "/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train/cmake-build-debug" && /app/extra/clion/bin/cmake/linux/bin/ccmake -S"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train" -B"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train/cmake-build-debug"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -91,7 +91,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner/cmake-build-debug" && /app/extra/clion/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner" -B"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner/cmake-build-debug"
+  COMMAND = cd "/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train/cmake-build-debug" && /app/extra/clion/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train" -B"/home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -107,9 +107,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischentest1_Notenrechner/cmake-build-debug
+# Folder: /home/user/Nextcloud/1. Semester/Prozedurale Sprachen Labor/Zwischentests/Zwischtentest2_Train/cmake-build-debug
 
-build all: phony Zwischentest1_Notenrechner
+build all: phony Zwischtentest2_Train
 
 # =============================================================================
 # Built-in targets

@@ -1,144 +1,239 @@
 #include <stdio.h>
 
-int main()
+typedef enum
 {
-    double ZTpunkte = 0;
-    double ATpunkte = 0;
-    double UEpunkte = 0;
-    double ALLpunkte = 0;
-    double punkte = 0;
-    double ZTundAT = 0;
-    double ZTundATprodz = 0;
-    double GESpunkte = 0;
-    double GESprodz = 0;
-    char typ;
-    int abschlusstest = 0;
+    passenger = 'P', sleeper = 'S', diner = 'D'
+}type;
 
-    while (typ != '=')
+typedef struct
+{
+    type typ;
+    int capacity;
+}carriage;
+
+typedef struct
+{
+    carriage carriages[10];
+    int length;
+}train;
+
+void printCarriage(carriage Carriage)
+{
+    printf("[%c:%03d]", Carriage.typ, Carriage.capacity);
+}
+
+void printTrain(train *Train)
+{
+    if (Train -> length == 0)
     {
-        printf("\nZT Punkte: %.2lf\n", ZTpunkte);
-        printf("AT Punkte: %.2lf\n", ATpunkte);
-        printf("UE Punkte: %.2lf\n", UEpunkte);
-        printf("Erreichbare Gesamtpunkte: %.2f\n", ALLpunkte);
+        printf("\nTrain: No Carriages!");
+    }
+    else
+    {
+        printf("\nTrain: ");
 
-        printf("Typ: ");
-        scanf(" %c", &typ);
-
-        switch (typ)
+        for (int i = 0; i < Train -> length; ++i)
         {
-            case 'z':
-                printf("\nPunkte: ");
-                scanf(" %lf", &punkte);
+            printf("%d:", i);
+            printCarriage(Train -> carriages[i]);
 
-                if (punkte >= 0 && punkte <= 10)
-                {
-                    ZTpunkte += punkte;
-                    ALLpunkte += 10;
-                }
+            if (i != Train -> length -1)
+            {
+                printf("-");
+            }
+        }
+        printf(" Length: %d", Train -> length);
+    }
+}
 
-                else
-                {
-                    printf("\nungueltiger Bereich: min 0.00, max 10.00");
-                }
+char getMenu()
+{
+    char input;
+
+    printf("\nChoose Action: print train (p), new carriage (n), print stats (s) or exit (x): ");
+    scanf(" %c", &input);
+
+    while (input != 'p' && input != 'n' && input != 's' && input !='x')
+    {
+        printf("\nInput invalid! Try again: ");
+        scanf(" %c", &input);
+    }
+    return input;
+}
+
+carriage getCarriage()
+{
+    carriage Carriage;
+    char input;
+    int capacity;
+
+    printf("\nChoose type of carriage: passenger (p), sleeper (s) or diner (d):");
+
+    while (1)
+    {
+        scanf(" %c", &input);
+
+        switch (input)
+        {
+            case 'p':
+                Carriage.typ = passenger;
                 break;
 
-            case 'a':
-                if (abschlusstest == 0)
-                {
-                    printf("\nPunkte: ");
-                    scanf("%lf", &punkte);
-
-                    if (punkte >= 0 && punkte <= 70)
-                    {
-                        ATpunkte += punkte;
-                        ALLpunkte += 70;
-                        ++abschlusstest;
-                    }
-
-                    else
-                    {
-                        printf("\nungueltiger Bereich: min 0.00, max 70.00");
-                    }
-                }
-
-                else
-                {
-                    printf("\nnur ein Abschlusstest erlaubt");
-                }
+            case 's':
+                Carriage.typ = sleeper;
                 break;
 
-            case 'u':
-                printf("\nPunkte: ");
-                scanf(" %lf", &punkte);
-                if (punkte >= 0 && punkte <= 0.5)
-                {
-                    UEpunkte += punkte;
-
-                    if (UEpunkte > 10)
-                    {
-                        UEpunkte = 10;
-                    }
-                }
-
-                else
-                {
-                    printf("\nungueltiger Bereich: min 0.00, max 0.50");
-                }
-                break;
-
-            case '=':
-                ZTundAT = ZTpunkte + ATpunkte;
-                ZTundATprodz = ZTundAT/ALLpunkte*100;
-
-                GESpunkte = ZTundAT + UEpunkte;
-                GESprodz = GESpunkte/ALLpunkte*100;
-
-                if (GESpunkte == 0 || ZTundAT == 0)
-                {
-                    printf("\nGesamtpunkte absolut: 0.00");
-                    printf("\nGesamtpunkte %%: 0.00 %%");
-                    printf("\nNote: 0");
-                }
-                else if (ZTundATprodz < 55)
-                {
-                    printf("\nGesamtpunkte absolut: %.2lf", ZTundAT);
-                    printf("\nGesamtpunkte %%: %.2lf %%", ZTundATprodz);
-                    printf("\nNote: 5");
-                }
-                else if (GESprodz < 67)
-                {
-                    printf("\nGesamtpunkte absolut: %.2lf", GESpunkte);
-                    printf("\nGesamtpunkte %%: %.2lf %%", GESprodz);
-                    printf("\nNote: 4");
-                }
-
-                else if (GESprodz < 78)
-                {
-                    printf("\nGesamtpunkte absolut: %.2lf", GESpunkte);
-                    printf("\nGesamtpunkte %%: %.2lf %%", GESprodz);
-                    printf("\nNote: 3");
-                }
-
-                else if (GESprodz < 89)
-                {
-                    printf("\nGesamtpunkte absolut: %.2lf", GESpunkte);
-                    printf("\nGesamtpunkte %%: %.2lf %%", GESprodz);
-                    printf("\nNote: 2");
-                }
-
-                else if (GESprodz >= 89)
-                {
-                    printf("\nGesamtpunkte absolut: %.2lf", GESpunkte);
-                    printf("\nGesamtpunkte %%: %.2lf %%", GESprodz);
-                    printf("\nNote: 1");
-                }
+            case 'd':
+                Carriage.typ = diner;
                 break;
 
             default:
-                printf("\nungueltige Eingabe");
-                break;
+                printf("\nInput invalid! Try again:");
+                continue;
         }
+        break;
+    }
+    printf("\nChoose capacity (20 - 130):");
+
+    while(1)
+    {
+        scanf("%d", &capacity);
+
+        if (capacity >= 20 && capacity <= 130)
+        {
+            Carriage.capacity = capacity;
+            break;
+        }
+        else
+        {
+            printf("\nInput invalid! Try again:");
+        }
+    }
+    return Carriage;
+}
+
+int getPosition(int length)
+{
+    int position = 0;
+
+    printf("\nChoose position for the new carriage (0-%d):", length);
+
+    while (1)
+    {
+        scanf("%d", &position);
+
+        if (position < 0 || position > length)
+        {
+            printf("\nInput invalid! Try again:");
+        }
+        else
+        {
+            break;
+        }
+    }
+    return position;
+}
+
+int insertCarriage(train *Train, int position, carriage Carriage)
+{
+    if (Train -> length == 10)
+    {
+        return -1;
+    }
+    else if (position < 0 || position > 9 || position > Train->length)
+    {
+        return -2;
+    }
+    else if ((Carriage.typ == sleeper && (Train -> carriages[position].typ != passenger || Train -> carriages[position+1].typ != passenger)) ||
+             (Carriage.typ == sleeper && (Train -> carriages[position].typ == sleeper)))
+    {
+        return -3;
+    }
+    else
+    {
+        for (int i = Train -> length; i > position; --i)
+        {
+            Train -> carriages[i] = Train -> carriages[i -1];
+        }
+        Train -> carriages[position] = Carriage;
+        ++Train -> length;
     }
     return 0;
 }
 
+int sumCapacity(train *Train, type typ)
+{
+    int sum = 0;
+
+    for (int i = 0; i < Train -> length; ++i)
+    {
+        if (Train -> carriages[i].typ == typ)
+        {
+            sum += Train -> carriages[i].capacity;
+        }
+    }
+    return sum;
+}
+
+void printTrainStats(train *Train)
+{
+    printTrain(Train);
+
+    printf("\nCapacities: ");
+    printf("\n  Passenger: %d", sumCapacity(Train, passenger));
+
+    if (sumCapacity(Train, passenger) < 65)
+    {
+        printf(" - invalid");
+    }
+    printf("\n  Sleeper: %d", sumCapacity(Train, sleeper));
+    printf("\n  Diner: %d", sumCapacity(Train, diner));
+}
+
+int main()
+{
+    carriage Carriage;
+    train Train;
+    Train.length = 0;
+
+    while (1)
+    {
+        switch (getMenu())
+        {
+            case 'p':
+                printTrain(&Train);
+                continue;
+
+            case 'n':
+                Carriage = getCarriage();
+                int position = getPosition(Train.length);
+                int error = insertCarriage(&Train, position, Carriage);
+
+                if (error == -1)
+                {
+                    printf("\nError: Train too long!");
+                }
+                else if (error == -2)
+                {
+                    printf("\nError: Position not possible!");
+                }
+                else if (error == -3)
+                {
+                    printf("\nError: Sleeper only possible directly before two passenger carriages!");
+                }
+                continue;
+
+            case 's':
+                printTrainStats(&Train);
+                continue;
+
+            case 'x':
+                break;
+
+            default:
+                break;
+        }
+        break;
+    }
+    return 0;
+}
