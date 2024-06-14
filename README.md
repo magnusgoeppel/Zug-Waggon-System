@@ -1,4 +1,4 @@
-# Train-Carriage System
+# Train Carriage System
 A simple console program in C that allows the user to assemble a train, carriage by carriage.
 
 # Features
